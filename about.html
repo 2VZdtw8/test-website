@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>My Title</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8"/>
+		<title>AT752</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="intro_about">
+        <div id = "top">
+            <nav class="nav">
+                <img id = "logo" src="logo.png" width="150px"/>
+                <ul>
+                    <div id = "NavLinks">
+                    <a href="javascript:void(0)" class = "close" onclick="document.getElementById('NavLinks').style.transition='0.5s'; closeNav()">&#10006;</a>
+                    <li><a href="home.html" class = "NavLink">Home</a></li>
+                    <li><a href="#" class="active" class = "NavLink">About</a></li>
+                    <li><a href="#" class = "NavLink">Services</a></li>
+                    <li><a href="#" class = "NavLink">Contacts</a></li>
+                    <li><a href="#" class = "NavLink">Feedback</a></li>
+                    </div>
+                </ul>
+                <hr id = "sep">
+                <span id = "open" class = "open" onclick="document.getElementById('NavLinks').style.transition='0.5s'; openNav()">&#9776</span>
+            </nav>
+        </div>
+        <div id="intro_text">
+                <nobr><h1>This is some text.</h1></nobr>
+        </div>
+        </div>
+        <div id="waves"></div>
+        <div id="body">
+            <div id = "Col-1-about">
+                <img class = "Col-img" src="img/chart-one.png"/>
+                <br>
+                <p style="text-align: center;">
+                    Very Powerful. Easy To Use. Very Stable. User-Friendly Interface.
+                </p>
+            </div>
+            <div id = "Col-2-about">
+                <img class = "Col-img" src="img/chart-two.png"/>
+                <br>
+                <p class="Col-text"style="text-align: center;">
+                    Very Powerful. Easy To Use. Very Stable. User-Friendly Interface.
+                </p>
+            </div>
+            <div id = "Col-3-about">
+                <img class = "Col-img" src="img/chart-three.png"/>
+                <br>
+                <p class="Col-text" style="text-align: center;">
+                    Very Powerful. Easy To Use. Very Stable. User-Friendly Interface.
+                </p>
+            </div>
+            <div id="paragraph-1">
+                <h2>This is a long title</h2>
+                <br>
+                <p>He took a sip of the drink. He wasn't sure whether he liked it or not, but at this moment it didn't matter. She had made it especially for him so he would have forced it down even if he had absolutely hated it. That's simply the way things worked. She made him a new-fangled drink each day and he took a sip of it and smiled, saying it was excellent.
+                    It's always good to bring a slower friend with you on a hike. If you happen to come across bears, the whole group doesn't have to worry. Only the slowest in the group do. That was the lesson they were about to learn that day.
+                    The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.
+                </p>
+            </div>
+            <div id="image-one">
+                <nobr><h1>This is some text.</h1></nobr>
+            </div>
+            <div id="paragraph-2">
+                <h2>This is another long title</h2>
+                <br>
+                <p>He took a sip of the drink. He wasn't sure whether he liked it or not, but at this moment it didn't matter. She had made it especially for him so he would have forced it down even if he had absolutely hated it. That's simply the way things worked. She made him a new-fangled drink each day and he took a sip of it and smiled, saying it was excellent.
+                    It's always good to bring a slower friend with you on a hike. If you happen to come across bears, the whole group doesn't have to worry. Only the slowest in the group do. That was the lesson they were about to learn that day.
+                    The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.
+                </p>
+            </div>
+        </div>
+        </div>
+
+    </body>
+    <footer>
+        <strong>©All Rights Reserved 2021</strong>
+    </footer>
+    <script src="js/jquery.js"></script>
+        <script>
+            function openNav() {
+                    document.getElementById("open").style.display = "none";
+                    document.getElementById("NavLinks").style.width="100%";
+                }
+            function closeNav()   {
+                    document.getElementById("NavLinks").style.width = "0";
+                    document.getElementById("open").style.display="block";
+                }
+            $(document).ready(function()
+            {
+                window.addEventListener('resize', function(event){
+                    if (window.innerWidth > 831){
+                        document.getElementById("NavLinks").style.transition="0s";
+                        openNav();
+                        if (window.scrollY <= 0){
+                        document.getElementById("logo").src="logo.png";
+                        }
+                        else{
+                        document.getElementById("logo").src="logo-dark.png";
+                        }
+                    }
+                    else{
+                        document.getElementById("logo").src="logo.png";
+                        document.getElementById("NavLinks").style.transition="0s";
+                        closeNav();
+                    }
+                });
+                window.addEventListener('scroll', function(){
+                    let header = document.querySelector('#top');
+    
+                    header.classList.toggle('scrolling-active', window.scrollY > 0)
+                    if (window.innerWidth > 831){
+                    if (window.scrollY <= 0){
+                        document.getElementById("logo").src="logo.png";
+                    }
+                    else{
+                        document.getElementById("logo").src="logo-dark.png";
+                    }
+                }
+                else{
+                    document.getElementById("logo").src="logo.png";
+                }
+                });
+                $("#logo").animate({
+                    margin:"1.4rem 0 0 0.1rem",opacity:"1"
+                },1000,);        
+                $("nav ul").animate({
+                    margin:"0 0 0 0.1rem",opacity:"1"
+                },1000,); 
+                $("#intro_text h1").animate({
+                    opacity:"1"
+                },1000,);     
+            });
+        </script>
+    
+    </html>
